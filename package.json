@@ -1,5 +1,4 @@
 {
-
     "name": "umeditor",
     "title": "umeditor",
     "description": "umeditor",
@@ -8,6 +7,19 @@
     "author": {
         "name": "f-cube @ FEX",
         "url": "http://fex.baidu.com"
+    },
+    "scripts": {
+        "build": "npm run build-net && npm run build-asp && npm run build-jsp && npm run build-php",
+        "build-net": "grunt --server=net",
+        "build-asp": "grunt --server=asp",
+        "build-jsp": "grunt --server=jsp",
+        "build-php": "grunt --server=php",
+        "build-gbk": "npm run build-net-gbk && npm run build-asp-gbk && npm run build-jsp-gbk && npm run build-php-gbk",
+        "build-net-gbk": "grunt --encode=gbk --server=net",
+        "build-asp-gbk": "grunt --encode=gbk --server=asp",
+        "build-jsp-gbk": "grunt --encode=gbk --server=jsp",
+        "build-php-gbk": "grunt --encode=gbk --server=php",
+        "build-all": "npm run build && npm run build-gbk"
     },
     "repository": {
         "type": "git",
@@ -22,17 +34,15 @@
     "bugs": {
         "url": "https://github.com/fex-team/umeditor/issues"
     },
-    "dependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-concat": "~0.3.0",
-        "grunt-contrib-cssmin": "~0.6.0",
-        "grunt-closurecompiler": "~0.9.9",
-        "grunt-contrib-copy": "~0.4.0",
-        "grunt-transcoding": "~0.1.1",
-        "grunt-text-replace": "~0.3.9",
-        "grunt-contrib-compress": "~0.7.0"
-    },
+    "dependencies": {},
     "devDependencies": {
-        "grunt": "~0.4.1"
+        "google-closure-compiler": "^20180204.0.0",
+        "grunt": "^1.0.2",
+        "grunt-contrib-compress": "^1.4.3",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-cssmin": "^2.2.1",
+        "grunt-text-replace": "^0.4.0",
+        "grunt-transcoding": "^0.1.3"
     }
 }

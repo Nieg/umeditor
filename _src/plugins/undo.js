@@ -232,7 +232,7 @@ UM.plugins['undo'] = function () {
                 me.undoManger.save(true);
             }
             clearTimeout(saveSceneTimer);
-            function save(cont){
+            var save = function (cont){
 
                 if (cont.selection.getRange().collapsed)
                     cont.fireEvent('contentchange');
